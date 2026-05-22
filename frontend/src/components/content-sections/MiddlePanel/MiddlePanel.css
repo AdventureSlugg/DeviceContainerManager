@@ -1,3 +1,24 @@
 .middlePanel {
+	width: 100%;
+	height: 100vh;
+}
+
+.leaflet-container {
+    height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+
+.top-layer {
+	position: fixed;
+	z-index: 1;
+	height: fit-content;
+	color: white;
 	padding: 1vw;
+}
+
+.bottom-layer {
+	z-index: 0;
+	height: 100%;
+	width: 100%;
 }
