@@ -1,13 +1,11 @@
-.flex {
-	display: flex;
-	width: 100%;
+.fullHeight {
 	height: 100vh;
 }
 
 .right {
 	background-color: var(--secondary-background);
-	width: 20vw;
 	overflow-y: scroll;
+	border-left: solid 1px rgb(66, 68, 96);
 }
 
 .middle {
@@ -15,13 +13,12 @@
 	background: url(/public/images/map-image.png);
 	background-repeat: no-repeat;
 	background-size: contain;
-	flex: 1;
 }
 
 .left {
 	background-color: var(--secondary-background);
-	width: 20vw;
 	overflow-y: scroll;
+	border-right: solid 1px rgb(66, 68, 96);
 }
 
 .toggle {

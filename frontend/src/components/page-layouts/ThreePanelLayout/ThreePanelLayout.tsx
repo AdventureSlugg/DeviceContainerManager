@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import './ThreePanelLayout.css';
+import { Group, Panel } from 'react-resizable-panels';
 
 interface ThreePanelLayoutProps {
 	rightPanel: ReactNode;
@@ -9,29 +10,31 @@ interface ThreePanelLayoutProps {
 
 function ThreePanelLayout (children: ThreePanelLayoutProps) {
 	return (
-		<div className='flex'>
-			<div 
-				className='left'
-			>
-				{
-					children.leftPanel
-				}
-			</div>
-			<div 
-				className='middle'
-			>
-				{
-					children.middlePanel
-				}
-			</div>
-			<div 
-				className='right'
-			>
-				{
-					children.rightPanel
-				}
-			</div>
-		</div>
+		<Group>
+			<Panel>
+				<div className="left fullHeight">
+					{
+						children.leftPanel
+					}	
+				</div>
+				
+			</Panel>
+			<Panel>
+				<div className='middle fullHeight'>
+					{
+						children.middlePanel
+					}
+				</div>
+			</Panel>
+			<Panel>
+				<div className='right fullHeight'>
+					{
+						children.rightPanel
+					}
+				</div>
+				
+			</Panel>
+		</Group>
 	)
 }
 
