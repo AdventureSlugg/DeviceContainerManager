@@ -1,12 +1,14 @@
 .card {
 	padding: 1vw;
-	background-color: aliceblue;
-	color: black;
+	background-color: rgb(37, 49, 59);
 	border-radius: 1vh;
+	box-shadow: 10px 5px 5px rgba(0,0,0,.5);
+	border: solid 1px black
 }
 
 .hoverable:hover {
-	scale: 1.1;
+	scale: 1.05;
+	border-color: aqua;
 }
 
 .hidden {

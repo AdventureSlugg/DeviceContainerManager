@@ -1,3 +1,46 @@
 .leftPanel {
 	padding: 1vw;	
 }
+
+.cardContent  p {
+	font-size: 12pt;
+	padding: .1vh;
+	margin: .1vh 0;
+}
+
+.cardContent  h2 {
+	font-size: 16pt;
+	margin: .5vh 0;
+}
+
+.cardContent  h3 {
+	font-size: 14pt;
+	margin: .5vh 0;
+}
+
+.cardContent  h4 {
+	font-size: 12pt;
+	margin: .1vh 0;
+}
+
+.devicesSection {
+	margin-top: 2vh;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: inherit;
+}
+
+.button {
+	margin: 1vh 0 0 0 !important;
+	padding: 1vh 1vw !important;
+	background-color: rgb(29, 108, 255)
+}
+
+.button:hover {
+	opacity: .8;
+}

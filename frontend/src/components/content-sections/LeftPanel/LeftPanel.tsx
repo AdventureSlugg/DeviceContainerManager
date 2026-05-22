@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Card from '../../common/Card/Card';
 import './LeftPanel.css';
 
@@ -12,11 +13,11 @@ const DEVICE_TYPES: Record<number, string> = {
 	2: 'SEL-123'
 }
 
-function getAssetById (id: number) {
+function getAssetTypeById (id: number) {
 	return ASSET_TYPES[id];
 }
 
-function getDeviceById (id: number) {
+function getDeviceTypeById (id: number) {
 	return DEVICE_TYPES[id];
 }
 
@@ -65,6 +66,8 @@ const assets: IAsset[] = [
 ]
 
 function LeftPanel () {
+	const [expandedAssets, setExpandedAssets] = useState<string[]>([]);
+	
 	return (
 		<div className='leftPanel'>
 			<p>
@@ -90,32 +93,68 @@ function LeftPanel () {
 				assets.map(a => {
 					return (
 						<Card
+							key={a.id}
 							hoverable={true}
 							size='fit'
 							innerContent={
 								// INCOMPLETE Don't forget to change the h2 style for cards!
-								<div>
+								<div 
+									className='cardContent'
+								>
+									<p>
+										{ getAssetTypeById(a.type) }
+									</p>
+
 									<h2>
 										{ a.name }
 									</h2>
-									{
-										a.devices.map(d => {
-											// INCOMPLETE I am going to change this section into a drop down component
-											return (
-												<Card
-													hidden={true}
-													hoverable={true}
-													innerContent={
-														<div>
-															<h3>
-																{d.name}
-															</h3>
-														</div>
-													}
-												></Card>
-											)
-										})
-									}
+									
+									<p>
+										<b>Location:</b> { a.location.facilityName }
+									</p>
+
+									<p 
+										className='button'
+										onClick={() => {
+											if (expandedAssets.includes(a.id)) {
+												setExpandedAssets(expandedAssets.filter(id => id !== a.id))
+											} else {
+												setExpandedAssets([...expandedAssets, a.id])
+											}
+											
+										}}
+									> 
+										{expandedAssets.includes(a.id) ? "Hide" : "Expand"} Details
+									</p>
+									
+									<div 
+										className={`devicesSection ${expandedAssets.includes(a.id) ? 'show' : 'hidden'}`}>
+										<h3>
+											Asset Devices
+										</h3>
+										{
+											a.devices.map(d => {
+												// INCOMPLETE I am going to change this section into a drop down component
+												return (
+													<Card
+														key={d.id}
+														customColor='rgb(54, 80, 100)'
+														hoverable={true}
+														innerContent={
+															<div className='cardContent'>
+																<h4>
+																	{d.name}
+																</h4>
+																<p>
+																	{ getDeviceTypeById(d.type) }
+																</p>
+															</div>
+														}
+													></Card>
+												)
+											})
+										}
+										</div>
 								</div>
 							}
 						></Card>

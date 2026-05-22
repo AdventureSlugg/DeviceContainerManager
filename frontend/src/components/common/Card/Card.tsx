@@ -6,6 +6,7 @@ interface CardProps {
 	size?: 'small' | 'medium' | 'large' | 'fit';
 	hoverable?: boolean;
 	hidden?: boolean;
+	customColor?: string;
 }
 
 function Card (props: CardProps) {
@@ -14,6 +15,9 @@ function Card (props: CardProps) {
 			className={
 				`card ${props.size ? props.size : 'fit'} ${props.hoverable && 'hoverable'} ${props.hidden && 'hidden'}`
 			}
+			style={{
+				backgroundColor: props.customColor
+			}}
 		>
 			{
 				props.innerContent
