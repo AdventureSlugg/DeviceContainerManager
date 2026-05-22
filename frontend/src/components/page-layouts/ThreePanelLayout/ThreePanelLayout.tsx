@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import './ThreePanelLayout.css';
 import { Group, Panel } from 'react-resizable-panels';
 
@@ -9,9 +9,10 @@ interface ThreePanelLayoutProps {
 }
 
 function ThreePanelLayout (children: ThreePanelLayoutProps) {
+	const [showRight, setShowRight] = useState<boolean>(false);
 	return (
 		<Group>
-			<Panel>
+			<Panel minSize={'10vw'} maxSize={'25vw'}>
 				<div className="left fullHeight">
 					{
 						children.leftPanel
@@ -26,14 +27,22 @@ function ThreePanelLayout (children: ThreePanelLayoutProps) {
 					}
 				</div>
 			</Panel>
-			<Panel>
-				<div className='right fullHeight'>
-					{
-						children.rightPanel
-					}
-				</div>
-				
-			</Panel>
+			{
+				showRight ?
+					<>
+						<Panel minSize={'10vw'} maxSize={'25vw'}>
+							<div className='right fullHeight'>
+								{
+									children.rightPanel
+								}
+							</div>
+						</Panel>
+					</>
+					:
+					<></>
+			}
+			
+			
 		</Group>
 	)
 }
