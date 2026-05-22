@@ -1,0 +1,12 @@
+.badge {
+	width: fit-content;
+	padding: 0 2vw;
+	border-radius: 5vh;
+	background-color: purple;
+	margin: 1vh .5vw;
+	font-size: 10pt;
+}
+
+.badge:hover {
+	opacity: .8;
+}

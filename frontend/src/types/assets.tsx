@@ -3,7 +3,7 @@ import { ILocation } from "./locations";
 
 type AssetType = 0 | 1;
 
-const ASSET_TYPES: Record<number, string> = {
+export const ASSET_TYPES: Record<number, string> = {
 	0: 'Substation',
 	1: 'Powerplant'
 }

@@ -15,10 +15,19 @@
 	height: fit-content;
 	color: white;
 	padding: 1vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	width: 40vw;
 }
 
 .bottom-layer {
+	top: 0;
 	z-index: 0;
 	height: 100%;
 	width: 100%;
+}
+
+.filters {
+	display: flex;
+	flex-direction: row;
 }
