@@ -96,7 +96,7 @@ const assets: IAsset[] = [
 		type: 0,
 		location: {
 			id: crypto.randomUUID(),
-			facilityName: '99402 Distrubution Center',
+			facilityName: '99402 Distribution Center',
 			address: 'blah blah blah'
 		},
 		devices: [
