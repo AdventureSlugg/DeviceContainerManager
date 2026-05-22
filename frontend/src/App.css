@@ -1,0 +1,9 @@
+:root {
+  --background: #2B3035;
+  --secondary-background: #1E1F2B;
+}
+
+.App {
+  background-color: var(--background);
+  height: 100vh;
+}
