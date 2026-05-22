@@ -15,7 +15,7 @@ export function getAssetTypeById (id: number) {
 export interface IAsset {
 	id: string;
 	name: string;
-	type: AssetType;
+	type: AssetType | number;
 	location: ILocation;
 	devices: IDevice[];
 }

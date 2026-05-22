@@ -1,74 +1,14 @@
 import { useState } from 'react';
 import Card from '../../common/Card/Card';
 import './LeftPanel.css';
-import { IAsset, getAssetTypeById } from '../../../types/assets';
+import { getAssetTypeById, IAsset } from '../../../types/assets';
 import { getDeviceTypeById } from '../../../types/devices';
 
-const assets: IAsset[] = [
-	{
-		id: crypto.randomUUID(),
-		name: 'Hydro-power plant',
-		type: 1,
-		location: {
-			id: crypto.randomUUID(),
-			facilityName: 'Zoe\'s Hydro-Electric Power Plant',
-			address: '88 No address for you :P... This should actuall have it\'s own type, but maybe I\'ll do that later. REFACTOR'
-		},
-		devices: [
-			{
-				id: crypto.randomUUID(),
-				name: 'Zoe\s Raspberry Pi',
-				type: 0
-			},
-			{
-				id: crypto.randomUUID(),
-				name: 'Definitely a Device',
-				type: 2
-			}
-		]
-	},
-	{
-		id: crypto.randomUUID(),
-		name: 'Solar Farm',
-		type: 1,
-		location: {
-			id: crypto.randomUUID(),
-			facilityName: 'The Power of the Sun~',
-			address: 'blah blah blah'
-		},
-		devices: [
-			{
-				id: crypto.randomUUID(),
-				name: 'erm...',
-				type: 0
-			},
-			{
-				id: crypto.randomUUID(),
-				name: 'hi',
-				type: 2
-			}
-		]
-	},
-	{
-		id: crypto.randomUUID(),
-		name: 'Asotin-001 Substation',
-		type: 0,
-		location: {
-			id: crypto.randomUUID(),
-			facilityName: '99402 Distribution Center',
-			address: 'blah blah blah'
-		},
-		devices: [
-			{
-				id: crypto.randomUUID(),
-				name: 'bahhhh',
-				type: 0
-			}
-		]
-	}
-]
+interface LeftPanelProps {
+	assets: IAsset[];
+}
 
-function LeftPanel () {
+function LeftPanel (props: LeftPanelProps) {
 	const [expandedAssets, setExpandedAssets] = useState<string[]>([]);
 
 	return (
@@ -78,7 +18,7 @@ function LeftPanel () {
 			</h1>
 
 			{
-				assets.map(a => {
+				props.assets.map(a => {
 					return (
 						<Card
 							key={a.id}

@@ -13,5 +13,5 @@ export function getDeviceTypeById (id: number) {
 export interface IDevice {
 	id: string;
 	name: string;
-	type: DeviceType;
+	type: DeviceType | number;
 }

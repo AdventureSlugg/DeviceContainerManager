@@ -9,7 +9,7 @@ interface ThreePanelLayoutProps {
 }
 
 function ThreePanelLayout (children: ThreePanelLayoutProps) {
-	const [showRight, setShowRight] = useState<boolean>(false);
+	const [showRight, setShowRight] = useState<boolean>(true);
 	return (
 		<Group>
 			<Panel minSize={'10vw'} maxSize={'25vw'}>
