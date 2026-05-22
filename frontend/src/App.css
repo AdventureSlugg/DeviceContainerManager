@@ -6,4 +6,5 @@
 .App {
   background-color: var(--background);
   height: 100vh;
+  color: white;
 }

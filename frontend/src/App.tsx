@@ -3,20 +3,17 @@ import './App.css';
 import React, { ReactNode } from 'react';
 
 import ThreePanelLayout from './components/page-layouts/ThreePanelLayout/ThreePanelLayout';
-
-function Temp (): ReactNode {
-	return (
-		<div>  </div>
-	)
-}
+import LeftPanel from './components/content-sections/LeftPanel/LeftPanel';
+import MiddlePanel from './components/content-sections/MiddlePanel/MiddlePanel';
+import RightPanel from './components/content-sections/RightPanel/RightPanel';
 
 function App() {
 	return (
 		<div className="App">
 			<ThreePanelLayout
-				rightPanel={ Temp() }
-				middlePanel={ Temp() }
-				leftPanel={ Temp() }
+				rightPanel={ RightPanel() }
+				middlePanel={ MiddlePanel() }
+				leftPanel={ LeftPanel() }
 			/>
 		</div>
 	);

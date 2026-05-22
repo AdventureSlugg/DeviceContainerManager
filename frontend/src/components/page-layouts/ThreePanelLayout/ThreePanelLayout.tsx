@@ -25,7 +25,7 @@ function ThreePanelLayout (children: ThreePanelLayoutProps) {
 				}
 			</div>
 			<div 
-				className='toggle right'
+				className='right'
 			>
 				{
 					children.rightPanel
