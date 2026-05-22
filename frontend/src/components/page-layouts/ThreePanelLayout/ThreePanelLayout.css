@@ -7,6 +7,7 @@
 .right {
 	background-color: var(--secondary-background);
 	width: 20vw;
+	overflow-y: scroll;
 }
 
 .middle {
@@ -20,6 +21,7 @@
 .left {
 	background-color: var(--secondary-background);
 	width: 20vw;
+	overflow-y: scroll;
 }
 
 .toggle {
