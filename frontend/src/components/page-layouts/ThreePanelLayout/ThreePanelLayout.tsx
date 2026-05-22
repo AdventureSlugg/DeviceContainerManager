@@ -11,10 +11,10 @@ function ThreePanelLayout (children: ThreePanelLayoutProps) {
 	return (
 		<div className='flex'>
 			<div 
-				className='right'
+				className='left'
 			>
 				{
-					children.rightPanel
+					children.leftPanel
 				}
 			</div>
 			<div 
@@ -25,10 +25,10 @@ function ThreePanelLayout (children: ThreePanelLayoutProps) {
 				}
 			</div>
 			<div 
-				className='toggle left'
+				className='toggle right'
 			>
 				{
-					children.leftPanel
+					children.rightPanel
 				}
 			</div>
 		</div>
