@@ -67,24 +67,9 @@ const assets: IAsset[] = [
 
 function LeftPanel () {
 	const [expandedAssets, setExpandedAssets] = useState<string[]>([]);
-	
+
 	return (
 		<div className='leftPanel'>
-			<p>
-				INCOMPLETE
-			</p>
-			<p>
-				This section will contain a browsable list of dropdown Assets.
-			</p>
-			<ul>
-				<li>
-					Assets will contain a list of devices that can be configured. Based on the selected Asset/Device
-				</li>
-				<li>
-					The right panel will open a configuration panel for the given selected item.
-				</li>
-			</ul>
-
 			<h1>
 				Asset List
 			</h1>
@@ -97,7 +82,6 @@ function LeftPanel () {
 							hoverable={true}
 							size='fit'
 							innerContent={
-								// INCOMPLETE Don't forget to change the h2 style for cards!
 								<div 
 									className='cardContent'
 								>
@@ -134,7 +118,6 @@ function LeftPanel () {
 										</h3>
 										{
 											a.devices.map(d => {
-												// INCOMPLETE I am going to change this section into a drop down component
 												return (
 													<Card
 														key={d.id}
