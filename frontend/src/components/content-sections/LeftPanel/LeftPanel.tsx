@@ -1,49 +1,8 @@
 import { useState } from 'react';
 import Card from '../../common/Card/Card';
 import './LeftPanel.css';
-
-const ASSET_TYPES: Record<number, string> = {
-	0: 'Substation',
-	1: 'Powerplant'
-}
-
-const DEVICE_TYPES: Record<number, string> = {
-	0: 'SEL-21',
-	1: 'SEL-900',
-	2: 'SEL-123'
-}
-
-function getAssetTypeById (id: number) {
-	return ASSET_TYPES[id];
-}
-
-function getDeviceTypeById (id: number) {
-	return DEVICE_TYPES[id];
-}
-
-type AssetType = 0 | 1;
-
-type DeviceType = 0 | 1 | 2;
-
-interface IDevice {
-	id: string;
-	name: string;
-	type: DeviceType;
-}
-
-interface ILocation {
-	id: string;
-	facilityName: string;
-	address: string;
-}
-
-interface IAsset {
-	id: string;
-	name: string;
-	type: AssetType;
-	location: ILocation;
-	devices: IDevice[];
-}
+import { IAsset, getAssetTypeById } from '../../../types/assets';
+import { getDeviceTypeById } from '../../../types/devices';
 
 const assets: IAsset[] = [
 	{
