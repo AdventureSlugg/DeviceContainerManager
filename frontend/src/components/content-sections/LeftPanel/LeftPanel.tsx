@@ -60,6 +60,11 @@ const assets: IAsset[] = [
 				id: crypto.randomUUID(),
 				name: 'Zoe\s Raspberry Pi',
 				type: 0
+			},
+			{
+				id: crypto.randomUUID(),
+				name: 'Definitely a Device',
+				type: 2
 			}
 		]
 	}
@@ -123,6 +128,7 @@ function LeftPanel () {
 														key={d.id}
 														customColor='rgb(54, 80, 100)'
 														hoverable={true}
+														margin={'.5vh'}
 														innerContent={
 															<div className='cardContent'>
 																<h4>
