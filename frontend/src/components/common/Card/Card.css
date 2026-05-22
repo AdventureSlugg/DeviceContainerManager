@@ -3,7 +3,8 @@
 	background-color: rgb(37, 49, 59);
 	border-radius: 1vh;
 	box-shadow: 10px 5px 5px rgba(0,0,0,.5);
-	border: solid 1px black
+	border: solid 1px black;
+	margin: .5vh;
 }
 
 .hoverable:hover {

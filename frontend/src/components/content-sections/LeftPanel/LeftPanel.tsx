@@ -49,7 +49,7 @@ const assets: IAsset[] = [
 	{
 		id: crypto.randomUUID(),
 		name: 'Hydro-power plant',
-		type: 0,
+		type: 1,
 		location: {
 			id: crypto.randomUUID(),
 			facilityName: 'Zoe\'s Hydro-Electric Power Plant',
@@ -65,6 +65,45 @@ const assets: IAsset[] = [
 				id: crypto.randomUUID(),
 				name: 'Definitely a Device',
 				type: 2
+			}
+		]
+	},
+	{
+		id: crypto.randomUUID(),
+		name: 'Solar Farm',
+		type: 1,
+		location: {
+			id: crypto.randomUUID(),
+			facilityName: 'The Power of the Sun~',
+			address: 'blah blah blah'
+		},
+		devices: [
+			{
+				id: crypto.randomUUID(),
+				name: 'erm...',
+				type: 0
+			},
+			{
+				id: crypto.randomUUID(),
+				name: 'hi',
+				type: 2
+			}
+		]
+	},
+	{
+		id: crypto.randomUUID(),
+		name: 'Asotin-001 Substation',
+		type: 0,
+		location: {
+			id: crypto.randomUUID(),
+			facilityName: '99402 Distrubution Center',
+			address: 'blah blah blah'
+		},
+		devices: [
+			{
+				id: crypto.randomUUID(),
+				name: 'bahhhh',
+				type: 0
 			}
 		]
 	}
