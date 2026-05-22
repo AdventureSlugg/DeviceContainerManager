@@ -1,0 +1,14 @@
+.card {
+	padding: 1vw;
+	background-color: aliceblue;
+	color: black;
+	border-radius: 1vh;
+}
+
+.hoverable:hover {
+	scale: 1.1;
+}
+
+.hidden {
+	display: none;
+}
