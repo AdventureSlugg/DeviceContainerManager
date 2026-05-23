@@ -15,3 +15,7 @@
 .hidden {
 	display: none;
 }
+
+.selected {
+	border: solid 2px rgb(255, 221, 0)
+}

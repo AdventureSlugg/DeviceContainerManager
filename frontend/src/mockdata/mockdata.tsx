@@ -63,9 +63,17 @@ function randomName (assetTypeId: number): string {
 }
 
 function randomLocation (): ILocation {
+	
+	// between 46 and 47
+	const lat = 46.7 + (Math.random() / 10);
+
+	// between -117 and -118
+	const long = -117.22 + (Math.random() / 10);
+
 	return {
 		id: crypto.randomUUID(),
 		facilityName: "Facility Name",
-		address: "Who cares..."
+		address: "Who cares...",
+		coordinates: [lat, long]
 	}
 }

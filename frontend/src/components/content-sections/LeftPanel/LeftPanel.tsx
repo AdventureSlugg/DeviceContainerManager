@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../../common/Card/Card';
 import './LeftPanel.css';
 import { getAssetTypeById, IAsset } from '../../../types/assets';
@@ -6,10 +6,21 @@ import { getDeviceTypeById } from '../../../types/devices';
 
 interface LeftPanelProps {
 	assets: IAsset[];
+	selectedAsset: string;
+	selectAsset: CallableFunction;
 }
 
 function LeftPanel (props: LeftPanelProps) {
 	const [expandedAssets, setExpandedAssets] = useState<string[]>([]);
+	const [selected, setSelected] = useState(props.selectedAsset);
+
+	useEffect(() => {
+		setSelected(props.selectedAsset);
+
+		// Open the device list for the given asset
+		setExpandedAssets([...expandedAssets, props.selectedAsset])
+		
+	}, [props.selectedAsset])
 
 	return (
 		<div className='leftPanel'>
@@ -21,12 +32,15 @@ function LeftPanel (props: LeftPanelProps) {
 				props.assets.map(a => {
 					return (
 						<Card
+							id={`${a.id}-card`}
 							key={a.id}
 							hoverable={true}
 							size='fit'
+							selectionOutline={selected === a.id}
 							innerContent={
 								<div 
 									className='cardContent'
+									onClick={() => props.selectAsset(a.id)}
 								>
 									<p>
 										{ getAssetTypeById(a.type) }
