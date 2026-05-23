@@ -54,10 +54,22 @@ function MiddlePanel (props: MiddlePaneProps) {
 											} as PointExpression
 										})
 									} 
+									
 									eventHandlers={{
 										click: () => props.selectAsset(a.id)
 									}}
 								>
+									<Popup>
+										<b>
+											{a.name}	
+										</b>
+										<p>
+											{a.location.facilityName}
+										</p>
+										<p>
+											{a.location.address}
+										</p>
+									</Popup>
 								</Marker>
 							)
 						})

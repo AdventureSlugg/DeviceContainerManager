@@ -3,6 +3,9 @@ import { getDeviceTypeById, IDevice } from "../types/devices";
 import { ILocation } from "../types/locations";
 
 const DESCRIPTORS: string[] = ['Asotin', 'Lewiston', 'Pullman', 'Clarkston', 'Spokane']
+const WORDS: string[] = ['Lincoln', 'Oak', 'Chimney', 'Reynolds'];
+const EXTENSIONS: string[] = ['Street', 'Circle', 'Drive', 'Center'];
+
 // const DESCRIPTORS: string[] = ['Asotin', 'Lewiston', 'Pullman', 'Clarkston', 'Spokane']
 
 export const mockAssets: IAsset[] = createNMockAssets(12);
@@ -70,10 +73,14 @@ function randomLocation (): ILocation {
 	// between -117 and -118
 	const long = -117.22 + (Math.random() / 10);
 
+	const street = `${WORDS[Math.floor(Math.random() * 10) % WORDS.length]}`
+	const address = `${Math.floor(Math.random() * 1000)} ${street} ${EXTENSIONS[Math.floor(Math.random() * 10) % EXTENSIONS.length]}`
+	const facilityName = `${street} Location`
+
 	return {
 		id: crypto.randomUUID(),
-		facilityName: "Facility Name",
-		address: "Who cares...",
+		facilityName: facilityName,
+		address: address,
 		coordinates: [lat, long]
 	}
 }
